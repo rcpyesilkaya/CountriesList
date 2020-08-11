@@ -32,6 +32,7 @@ class CountryFragment : Fragment() {
 
         countryBtn.setOnClickListener {
             val action=CountryFragmentDirections.actionCountryFragmentToFeedFragment()
+
             Navigation.findNavController(it).navigate(action)
         }
 
