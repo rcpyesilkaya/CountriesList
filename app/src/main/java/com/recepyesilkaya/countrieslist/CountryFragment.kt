@@ -25,16 +25,6 @@ class CountryFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        arguments?.let {
-            countryUuidC=CountryFragmentArgs.fromBundle(it).countryUuid
-            countryTxt.text=countryUuidC.toString()
-        }
-
-        countryBtn.setOnClickListener {
-            val action=CountryFragmentDirections.actionCountryFragmentToFeedFragment()
-
-            Navigation.findNavController(it).navigate(action)
-        }
 
     }
 

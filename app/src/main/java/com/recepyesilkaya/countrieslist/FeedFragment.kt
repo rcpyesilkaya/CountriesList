@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_feed.*
 
 
 class FeedFragment : Fragment() {
-    private var countryUuid=1;
+    private var countryUuid=1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,10 +24,7 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        feedBtn.setOnClickListener {
-            val action=FeedFragmentDirections.actionFeedFragmentToCountryFragment(countryUuid)
-            Navigation.findNavController(it).navigate(action)
-        }
+
 
     }
 }
