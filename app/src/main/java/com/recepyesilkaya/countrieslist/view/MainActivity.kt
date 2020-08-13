@@ -1,7 +1,8 @@
-package com.recepyesilkaya.countrieslist
+package com.recepyesilkaya.countrieslist.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.recepyesilkaya.countrieslist.R
 
 class MainActivity : AppCompatActivity() {
 

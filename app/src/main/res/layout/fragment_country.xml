@@ -8,7 +8,7 @@
         android:layout_margin="5dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        tools:context=".FeedFragment">
+        tools:context=".view.FeedFragment">
 
         <ImageView
             android:id="@+id/detailImg"
