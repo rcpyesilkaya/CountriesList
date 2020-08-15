@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.recepyesilkaya.countrieslist.R
 import com.recepyesilkaya.countrieslist.adapter.CountryAdapter
 import com.recepyesilkaya.countrieslist.model.CountryModel
+import com.recepyesilkaya.countrieslist.util.CustomSharedPreferences
 import com.recepyesilkaya.countrieslist.viewmodel.FeedViewModel
 import kotlinx.android.synthetic.main.fragment_feed.*
 
@@ -45,7 +46,7 @@ class FeedFragment : Fragment() {
             loadingProgress.visibility=View.VISIBLE
             errorTxt.visibility=View.GONE
 
-            feedViewModel.refreshData()
+            feedViewModel.refreshFromAPI()
 
         }
 

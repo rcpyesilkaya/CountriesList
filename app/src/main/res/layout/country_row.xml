@@ -24,7 +24,8 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
             android:layout_weight="5"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="35dp">
 
             <TextView
                 android:id="@+id/countryName"
