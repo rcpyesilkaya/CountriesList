@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="selectedCountry"
+            type="com.recepyesilkaya.countrieslist.model.CountryModel" />
+
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,15 +23,15 @@
             android:layout_height="wrap_content"
             android:minHeight="200dp"
             android:padding="5dp"
-            android:scaleType="fitCenter"
-            android:src="@mipmap/ic_launcher_round"/>
+            android:downloadImgUrl="@{selectedCountry.countryImageUrl}"
+            android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/detailCountryName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Country Name"
+            android:text="@{selectedCountry.countryName}"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -33,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Country Capital"
+            android:text="@{selectedCountry.countryCapital}"
             android:textSize="15sp" />
 
         <TextView
@@ -41,21 +48,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Country Region" />
+            android:text="@{selectedCountry.countryRegion}"/>
 
         <TextView
             android:id="@+id/detailCountryCurrency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Country Currency" />
+            android:text="@{selectedCountry.countryCurrency}" />
 
         <TextView
             android:id="@+id/detailCountryLanguage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="Country Language" />
+            android:text="@{selectedCountry.countryLanguage}" />
 
 
     </LinearLayout>

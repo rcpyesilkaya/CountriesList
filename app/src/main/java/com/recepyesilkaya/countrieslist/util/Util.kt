@@ -1,7 +1,9 @@
 package com.recepyesilkaya.countrieslist.util
 
 import android.content.Context
+import android.view.View
 import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -14,8 +16,8 @@ fun ImageView.downloadImageFromUrl(url: String?,progressDrawable: CircularProgre
         .error(R.mipmap.ic_launcher_round)
 
     Glide.with(context)
-        .load(url).
-        into(this)
+        .load(url)
+        .into(this)
 
 }
 
@@ -26,3 +28,9 @@ fun getPlaceHolder(context: Context):CircularProgressDrawable{
         start()
     }
 }
+
+@BindingAdapter("android:downloadImgUrl")
+fun downloadImgUrl(view:ImageView,url:String?) {
+    view.downloadImageFromUrl(url, getPlaceHolder(view.context))
+}
+

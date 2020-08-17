@@ -82,6 +82,7 @@ class FeedViewModel(application: Application) : BaseViewModel(application) {
     }
 
     fun storeInSqllite(countriesList: List<CountryModel>) {
+
         launch {
             val dao = CountryDatabase(getApplication()).countryDao()
             dao.deleteAllCounties()

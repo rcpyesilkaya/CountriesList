@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--suppress ALL -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="countryModel"
+            type="com.recepyesilkaya.countrieslist.model.CountryModel" />
+        <variable
+            name="listener"
+            type="com.recepyesilkaya.countrieslist.adapter.CountryClickListener" />
+
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="5dp"
+        android:onClick="@{listener::onCountryClicked}"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/countryUuidText"
+            android:visibility="gone"
+            android:text="@{String.valueOf(countryModel.uuid)}"/>
 
         <ImageView
             android:id="@+id/countryImg"
@@ -15,8 +32,8 @@
             android:layout_weight="3"
             android:minHeight="145dp"
             android:padding="10dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:downloadImgUrl="@{countryModel.countryImageUrl}"
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -31,7 +48,7 @@
                 android:id="@+id/countryName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@{countryModel.countryName}"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -39,7 +56,7 @@
                 android:id="@+id/countryRegion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Region"
+                android:text="@{countryModel.countryRegion}"
                 android:textSize="14sp" />
         </LinearLayout>
 
